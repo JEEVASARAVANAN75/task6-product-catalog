@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog - Task 6</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>🛒 Product Catalog</h1>
+
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search product..." />
+
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+        </select>
+
+        <select id="sortSelect">
+          <option value="default">Sort By</option>
+          <option value="priceLow">Price: Low to High</option>
+          <option value="priceHigh">Price: High to Low</option>
+          <option value="titleAZ">Title: A-Z</option>
+          <option value="titleZA">Title: Z-A</option>
+        </select>
+      </div>
+
+      <div class="cart-box">
+        <button id="viewCartBtn">
+          🛍 Cart (<span id="cartCount">0</span>)
+        </button>
+      </div>
+    </header>
+
+    <section class="admin-section">
+      <h2>Add New Product (POST)</h2>
+
+      <form id="addForm">
+        <input type="text" id="title" placeholder="Product Title" required />
+        <input type="number" id="price" placeholder="Price" required />
+        <input type="text" id="category" placeholder="Category" required />
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <div id="spinner" class="spinner hidden">
+      <p>Loading products...</p>
+    </div>
+
+    <div id="error-msg" class="error hidden"></div>
+
+    <main>
+      <div id="productGrid" class="grid"></div>
+    </main>
+
+    <div class="pagination">
+      <button id="prevBtn">Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
